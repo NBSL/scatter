@@ -4,11 +4,11 @@
   },
   "name": "scatter",
   "description": "IoC container and out-of-the-box extensibility for Node.js applications",
-  "homepage": "https://github.com/mariocasciaro/scatter",
-  "version": "0.8.3",
+  "homepage": "https://github.com/NBSL/scatter",
+  "version": "0.8.4",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mariocasciaro/scatter.git"
+    "url": "git://github.com/NBSL/scatter.git"
   },
   "main": "lib/index.js",
   "dependencies": {
@@ -21,16 +21,17 @@
     "when": "~3.0.1"
   },
   "devDependencies": {
+    "benchpress": "~0.1.2",
     "chai": "~1.8.1",
-    "mocha": "~1.15.1",
-    "rimraf": "~2.2.2",
-    "mocha-lcov-reporter": "0.0.1",
     "coveralls": "~2.6.0",
-    "istanbul": "~0.1.46",
-    "benchpress": "~0.1.2"
+    "mocha": "~1.15.1",
+    "mocha-lcov-reporter": "0.0.1",
+    "nyc": "^11.6.0",
+    "rimraf": "~2.2.2"
   },
   "scripts": {
-    "test": "node ./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha test/*.js --report html -- -R spec"
+    "test": "nyc --reporter=html --reporter=text ./node_modules/mocha/bin/_mocha test/*.js -- -R spec",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "keywords": [
     "dependency injection",

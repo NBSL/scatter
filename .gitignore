@@ -5,3 +5,5 @@ node_modules
 /test/01-load/2rootsAutodiscoverLink/base2
 npm-debug.log
 /coverage
+/.nyc_output
+package-lock.json

@@ -1,0 +1,15 @@
+{
+  "particles": {
+    "name": "test",
+    "subparticles": [
+        {
+          "name": "base1",
+          "path": "base1"
+        },
+        {
+          "name": "base2",
+          "path": "base2"
+        }
+    ]
+  }
+}
